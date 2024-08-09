@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const LoginRoute = require("./src/routes/Login.js");
+const LoginRoute = require("./routes/Login.js");
 
 const app = express();
 const PORT = 9000;

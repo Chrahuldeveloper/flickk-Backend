@@ -1,6 +1,6 @@
 const express = require("express");
 const LoginRoute = express.Router();
-const users = require("../models/UserSignup.js");
+const users = require("../models/User.js");
 
 LoginRoute.get("/", async (req, res) => {
   res.send("login page");
@@ -8,7 +8,7 @@ LoginRoute.get("/", async (req, res) => {
 
 LoginRoute.post("/", async (req, res) => {
   try {
-    const { Name, email, password } = req.body;
+    const { Name, email, Phone, Pic } = req.body;
     const isExists = await users.findOne({ email: email });
     if (isExists) {
       return res.status(400).send("User already exists");
@@ -16,7 +16,8 @@ LoginRoute.post("/", async (req, res) => {
     const user = new users({
       Name: Name,
       email: email,
-      password: password,
+      Phone: Phone,
+      Pic: Pic,
     });
     await user.save();
     res.status(200).send(user._id);

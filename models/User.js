@@ -9,10 +9,14 @@ const User = new mongoose.Schema({
     type: String,
     required: true,
   },
-  password: {
+  Phone: {
     type: String,
     required: true,
   },
+  Pic : {
+    type: String,
+    required: true,
+  }
 });
 
 const users = mongoose.model("users", User);
