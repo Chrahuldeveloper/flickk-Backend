@@ -9,10 +9,12 @@ const User = new mongoose.Schema({
     type: String,
     required: true,
   },
- 
-  Pic : {
+  Pic: {
     type: String,
     required: true,
+  },
+  pdf:{
+    type: String,
   }
 });
 

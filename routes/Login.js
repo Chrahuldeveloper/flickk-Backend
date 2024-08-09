@@ -8,7 +8,7 @@ LoginRoute.get("/", async (req, res) => {
 
 LoginRoute.post("/", async (req, res) => {
   try {
-    const { Name, email, Phone, Pic } = req.body;
+    const { Name, email, Pic } = req.body;
     const isExists = await users.findOne({ email: email });
     if (isExists) {
       return res.status(400).send("User already exists");
