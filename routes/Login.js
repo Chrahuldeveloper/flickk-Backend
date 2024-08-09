@@ -3,7 +3,7 @@ const LoginRoute = express.Router();
 const users = require("../models/User.js");
 
 LoginRoute.get("/", async (req, res) => {
-  res.send("login page");
+  res.write("login page");
 });
 
 LoginRoute.post("/", async (req, res) => {
@@ -16,7 +16,6 @@ LoginRoute.post("/", async (req, res) => {
     const user = new users({
       Name: Name,
       email: email,
-      Phone: Phone,
       Pic: Pic,
     });
     await user.save();

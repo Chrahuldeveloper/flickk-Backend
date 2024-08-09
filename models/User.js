@@ -9,10 +9,7 @@ const User = new mongoose.Schema({
     type: String,
     required: true,
   },
-  Phone: {
-    type: String,
-    required: true,
-  },
+ 
   Pic : {
     type: String,
     required: true,
